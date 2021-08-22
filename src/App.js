@@ -23,30 +23,26 @@ function App() {
 
   const [handleSpin, setHandleSpin] = useState(false);
 
+  const [slideIndex, setSlideIndex] = useState(1);
   const [sliderItems, setSliderItems] = useState([
     {
       id: "1",
-      src: "./img/slider-imgTest_0.png",
       sliderClass: "slider-imgPrev",
     },
     {
       id: "2",
-      src: "./img/slider-imgTest_1.png",
       sliderClass: "slider-img",
     },
     {
       id: "3",
-      src: "./img/slider-imgTest_2.png",
       sliderClass: "slider-imgNext",
     },
     {
       id: "4",
-      src: "./img/slider-imgTest_3.png",
       sliderClass: "slider-imgNext",
     },
     {
       id: "5",
-      src: "./img/slider-imgTest_4.png",
       sliderClass: "slider-imgNext",
     },
   ]);
@@ -80,6 +76,8 @@ function App() {
           setHandleSpin,
           sliderItems,
           setSliderItems,
+          slideIndex,
+          setSlideIndex,
         }}
       >
         <div className="wrapper clear">

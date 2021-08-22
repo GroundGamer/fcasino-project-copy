@@ -4,18 +4,31 @@ import { Context } from "../../context";
 import "./slider.scss";
 
 export default function Slider() {
-  const { sliderItems, setSliderItems } = useContext(Context);
+  const { sliderItems, setSliderItems, slideIndex, setSlideIndex } =
+    useContext(Context);
 
   const slider = useRef();
 
   console.log(sliderItems);
 
-  const prevHandler = (e) => {
-    console.log(slider);
+  const nextHandler = () => {
+    if (slideIndex !== sliderItems.length) {
+      console.log(slider);
+      slider.current.childNodes.forEach((element, index) => {
+        if (index !== 0 && index !== 6) {
+            console.log(element);
+            setSlideIndex(slideIndex + 1);
+        }
+      });
+    }
+
+    if (slideIndex === sliderItems.length) {
+      setSlideIndex(1);
+    }
   };
 
-  const nextHandler = (e) => {
-    console.log(e);
+  const prevHandler = () => {
+    // setSlideIndex(slideIndex - 1);
   };
 
   return (
@@ -30,7 +43,7 @@ export default function Slider() {
             <img
               key={sliderItem.id}
               className={sliderItem.sliderClass}
-              src={sliderItem.src}
+              src={`./img/slider-imgTest_${index}.png`}
               alt="slider"
             />
           </>
