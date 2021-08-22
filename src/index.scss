@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: "Mukta", system-ui;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #30364a;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #111016;
+    border-radius: 0px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #111016;
+  }
+  &::-webkit-scrollbar-track {
+    background: #d2a283;
+    border-radius: 0px;
+    box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+  }
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  
+  .blob-1 {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @media (max-width: 535px) {
+      display: none;
+    }
+  }
+  .blob-2 {
+    z-index: -2;
+    position: absolute;
+    top: 620px;
+
+    @media (max-width: 535px) {
+      display: none;
+    }
+  }
+  .chat-logoImg {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: calc(50% / 2.2);
+    right: 0;
+    height: 516px;
+
+    @media (max-width: 1440px) {
+      width: calc(376px / 1.2);
+      height: calc(516px / 1.2);
+      right: calc(-328px / 1.2);
+    }
+
+    @media (max-width: 1024px) {
+      width: calc(376px / 1.25);
+      height: calc(516px / 1.25);
+      right: calc(-328px / 1.23);
+    }
+
+    @media (max-width: 768px) {
+      width: calc(376px / 1.3);
+      height: calc(516px / 1.3);
+      right: calc(-328px / 1.26);
+    }
+
+    @media (max-width: 690px) {
+      display: none;
+    }
+
+    img {
+      width: 48px;
+      height: 101px;
+      cursor: pointer;
+      @media (min-width: 2265px) {
+        width: calc(48px * 1.2);
+        height: calc(101px * 1.2);
+      }
+
+      @media (max-width: 1440px) {
+        width: calc(48px / 1.2);
+        height: calc(101px / 1.2);
+      }
+
+      @media (max-width: 1024px) {
+        width: calc(48px / 1.4);
+        height: calc(101px / 1.4);
+      }
+
+      @media (max-width: 768px) {
+        width: calc(48px / 1.6);
+        height: calc(101px / 1.6);
+      }
+
+      @media (max-width: 425px) {
+        width: calc(48px / 1.8);
+        height: calc(101px / 1.8);
+      }
+
+      @media (max-width: 375px) {
+        width: calc(48px / 2);
+        height: calc(101px / 2);
+      }
+    }
+  }
+}
+
+.divider{
+  margin-top: 10px;
+  height: 1px;
+  background: radial-gradient(50% 50% at 50% 50%, #D2A283 0%, rgba(210, 162, 131, 0) 100%);
+}

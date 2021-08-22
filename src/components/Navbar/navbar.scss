@@ -1,0 +1,157 @@
+.navbar {
+    position: fixed;
+    z-index: 100;
+    left: 0px;
+    top: 0px;
+    width: 300px;
+    height: 100vh;
+    transform: translateZ(0px);
+    background: linear-gradient(
+      180deg,
+      rgba(17, 16, 22, 0.75) 0%,
+      #111016 49.48%,
+      rgba(17, 16, 22, 0.75) 100%
+    );
+  
+    &__active {
+      animation: navbarToggle 0.5s forwards;
+    }
+  
+    &__hide {
+      animation: navbarToggle 0.5s reverse;
+      opacity: 0;
+    }
+  
+    @keyframes navbarToggle {
+      0% {
+        opacity: 0;
+        transform: translateX(-300px);
+      }
+  
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  
+    .nabvar-content {
+      padding: 20px 20px;
+  
+      .navbar-btn__close {
+        display: inline-block;
+        cursor: pointer;
+        transition: opacity 0.2s ease-in-out;
+  
+        .navbar-1,
+        .navbar-2 {
+          width: 32px;
+          height: 6px;
+          background-color: #c4d0ee;
+          margin: 2px 0;
+  
+          @media (min-width: 2265px) {
+            width: 40px;
+            height: 7px;
+          }
+        }
+        .navbar-1 {
+          transform: rotate(45deg) translateY(5px) translateX(6px);
+        }
+  
+        .navbar-2 {
+          transform: rotate(-45deg);
+        }
+      }
+  
+      .navbar-casinoGame,
+      .navbar-leaderboard {
+        margin-top: 10px;
+        cursor: pointer;
+        overflow: hidden;
+      }
+  
+      .navbar-text {
+        display: grid;
+  
+        grid-template-columns: 1fr 10fr 1fr;
+        align-items: stretch;
+  
+        .navbar-casinoListImg {
+          transition: transform 0.3s ease-in-out;
+          transform: rotate(0deg);
+  
+          &.change {
+            transform: rotate(180deg);
+          }
+        }
+  
+        .navbar-leaderBoardListImg {
+          transition: transform 0.3s ease-in-out;
+          transform: rotate(0deg);
+  
+          &.change {
+            transform: rotate(180deg);
+          }
+        }
+  
+        h3 {
+          margin: 0 0 0 0;
+          color: #c4d0ee;
+        }
+      }
+  
+      .navbar-dropListContainer {
+        overflow: hidden;
+  
+        .navbar-leaderBoardDropList {
+          opacity: 0;
+        }
+        .navbar-casinoDropList {
+          opacity: 0;
+        }
+      }
+  
+      .navbar-casinoDropList__activeDrop,
+      .navbar-leaderBoardDropList__activeDrop {
+        animation: dropDownList 0.3s forwards;
+      }
+  
+      .navbar-casinoDropList__enterDrop,
+      .navbar-leaderBoardDropList__enterDrop {
+        opacity: 1 !important;
+      }
+  
+      .navbar-casinoDropList__hideDrop,
+      .navbar-leaderBoardDropList__hideDrop {
+        animation: dropDownList 0.3s reverse;
+      }
+  
+      @keyframes dropDownList {
+        0% {
+          transform: translateY(-45px);
+          opacity: 0;
+        }
+  
+        100% {
+          transform: translateY(0px);
+          opacity: 1;
+        }
+      }
+  
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        a{
+          text-decoration: none;
+        }
+  
+        li {
+          color: #d2a283;
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+    }
+  }
