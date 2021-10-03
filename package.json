@@ -16,13 +16,16 @@
     "react-konva": "^17.0.2-5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-slick": "^0.28.1",
     "react-transition-group": "^4.4.2",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "stop": "taskkill -F -IM node.exe",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
